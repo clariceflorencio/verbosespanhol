@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clarice Florêncio de Carvalho</title>
+    <style>
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background: #ffffff; /* Fundo branco conforme o design */
+        font-family: Arial, sans-serif; /* Mudança de fonte para Arial */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .header {
+        font-size: 24px; /* Tamanho da fonte ajustado */
+        color: black; /* Cor de texto */
+        text-align: center;
+        margin-bottom: 50px; /* Espaçamento até o botão */
+      }
+      #videoButton {
+        background: #e0e0e0; /* Cor de fundo do botão para destaque */
+        border: 2px solid black; /* Borda preta */
+        color: black; /* Cor do texto */
+        font-size: 20px; /* Tamanho da fonte do botão */
+        padding: 10px 20px; /* Padding para fazer o botão maior */
+        cursor: pointer;
+        text-align: center;
+        display: inline-block;
+        border-radius: 5px; /* Borda arredondada leve */
+      }
+      .video-container {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        z-index: 1000;
+      }
+      video {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">Clarice Florêncio de Carvalho 2ºB</div>
+    <button id="videoButton">Acesse aqui</button>
+
+    <div class="video-container" id="videoContainer">
+      <video id="videoPlayer" controls autoplay>
+        <source src="trabalho.mp4" type="video/mp4" />
+        Seu navegador não suporta vídeos.
+      </video>
+    </div>
+
+    <script>
+      document
+        .getElementById("videoButton")
+        .addEventListener("click", function () {
+          var container = document.getElementById("videoContainer");
+          container.style.display = "block";
+          document.getElementById("videoPlayer").play();
+        });
+    </script>
+  </body>
+</html>
